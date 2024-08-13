@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { IoIosArrowDown } from "react-icons/io";
-import jinesh from '../../src/assets/video/jinesh.png';
+import jinesh from '../../src/assets/images/jinesh.png';
 
 const testimonialsData = [
     {

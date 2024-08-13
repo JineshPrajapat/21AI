@@ -1,5 +1,5 @@
 import React from "react";
-import jinesh from "../../src/assets/video/jinesh.png"
+import jinesh from "../../src/assets/images/jinesh.png"
 
 const About = () => {
     return (

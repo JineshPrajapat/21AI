@@ -3,6 +3,9 @@ import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosApps } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
+import logo from '../assets/images/logo_black.svg'
+import logo2 from '../assets/images/logo_white.svg'
+import logo3 from '../assets/images/L1.png'
 
 const navLinks = [
     { label: 'Home', path: "#hero" },
@@ -102,7 +105,7 @@ const Header = () => {
         <header className={`sticky top-0 flex items-center bg-black text-white p-4 transition-all duration-500 z-[997] ${isMobileMenuOpen ? 'shadow-md' : ''}`}>
             <div className="container lg:mx-20 flex items-center justify-between relative">
                 <Link to="/" className="flex items-center">
-                    <h1 className="text-3xl font-bold m-0">21AI</h1>
+                    <div className="h-20"><img src={logo2} alt='logo' className=' h-full w-full'/></div>
                 </Link>
 
                 <nav className={`lg:flex lg:items-center lg:relative lg:shadow-none z-[9997] ${isMobileMenuOpen ? 'fixed inset-0 bg-gray-900 bg-opacity-80' : 'hidden'}`}>
@@ -153,7 +156,7 @@ const Header = () => {
                                                                 }`}
                                                             onMouseEnter={() => setHoveredSubDropdown(subIndex)}
                                                             onMouseLeave={() => setHoveredSubDropdown(null)}
-                                                            
+
                                                         >
                                                             {subLink.subMenu.map((deepLink, deepIndex) => (
                                                                 <li key={deepIndex}>

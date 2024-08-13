@@ -14,11 +14,14 @@ import ScrollToTop from './hooks/ScrollToTop';
 import Research from './Pages/Research';
 import Courses from './Pages/Courses';
 import BlogDetails from './Component/BlogDetails';
+import BlogTags from './Component/BlogTags';
+import CourseDetails from './Component/CourseDetails';
 
 function App() {
   return (
     <div className="App dark:bg-gray-900">
       <Header />
+     
       <Routes>
         <Route path="/" element={
           <>
@@ -32,8 +35,10 @@ function App() {
         } />
         <Route path="/Blog" element={<Blog />} />
         <Route path="/Blog/:blogTitle" element={<BlogDetails/>}/>
+        <Route path="/Blog/tag/:tagName" element={<BlogTags/>}/>
         <Route path='/Research/*' element={<Research/>}/>
-        <Route path='/Courses/*' element={<Courses/>}/>
+        <Route path='/Courses' element={<Courses/>}/>
+        <Route path='/Courses/:courseTitle' element={<CourseDetails/>}/>
 
       </Routes>
       <Footer />
