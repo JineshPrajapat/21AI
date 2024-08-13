@@ -2,8 +2,8 @@ export const blog = [
     {
         postId: "1",
         title: "Introduction to React",
-        imgURL:"",
-        content: "React is a JavaScript library for building user interfaces, Tailwind CSS is a utility-first CSS framework for creating custom designs, ES6 introduced many new features to JavaScript...",
+        imgURL: "",
+        content: `<p>Tailwind CSS is a utility-first CSS framework for creating custom designs<p>`,
         tags: ["React", "JavaScript", "Frontend"],
         categories: ["Development", "Web"],
         publishedDate: "2024-08-12T10:00:00Z",
@@ -13,7 +13,7 @@ export const blog = [
     {
         postId: "2",
         title: "Understanding Tailwind CSS",
-        imgURL:"",
+        imgURL: "",
         content: "Tailwind CSS is a utility-first CSS framework for creating custom designs...",
         tags: ["Tailwind CSS", "CSS", "Design"],
         categories: ["Design", "Frontend"],
@@ -23,7 +23,7 @@ export const blog = [
     {
         postId: "3",
         title: "Mastering JavaScript ES6",
-        imgURL:"",
+        imgURL: "",
         content: "ES6 introduced many new features to JavaScript...",
         tags: ["JavaScript", "ES6", "Programming"],
         categories: ["Development", "Web"],
@@ -33,7 +33,7 @@ export const blog = [
     {
         postId: "4",
         title: "Getting Started with Node.js",
-        imgURL:"",
+        imgURL: "",
         content: "Node.js is a runtime environment for executing JavaScript on the server...",
         tags: ["Node.js", "JavaScript", "Backend"],
         categories: ["Development", "Backend"],
@@ -43,7 +43,7 @@ export const blog = [
     {
         postId: "5",
         title: "CSS Grid Layout: A Complete Guide",
-        imgURL:"",
+        imgURL: "",
         content: "CSS Grid is a powerful tool for creating complex layouts...",
         tags: ["CSS", "Grid", "Design"],
         categories: ["Design", "Frontend"],
@@ -54,7 +54,7 @@ export const blog = [
     {
         postId: "6",
         title: "Exploring MongoDB for Beginners",
-        imgURL:"",
+        imgURL: "",
         content: "MongoDB is a NoSQL database that allows you to store data in flexible, JSON-like documents...",
         tags: ["MongoDB", "Database", "NoSQL"],
         categories: ["Development", "Database"],
@@ -64,7 +64,7 @@ export const blog = [
     {
         postId: "7",
         title: "Introduction to Express.js",
-        imgURL:"",
+        imgURL: "",
         content: "Express.js is a minimal and flexible Node.js web application framework...",
         tags: ["Express.js", "Node.js", "Backend"],
         categories: ["Development", "Backend"],
@@ -74,7 +74,7 @@ export const blog = [
     {
         postId: "8",
         title: "Understanding Async/Await in JavaScript",
-        imgURL:"",
+        imgURL: "",
         content: "Async/await is a way to write asynchronous code that looks synchronous...",
         tags: ["JavaScript", "Async", "Programming"],
         categories: ["Development", "Web"],
@@ -84,7 +84,7 @@ export const blog = [
     {
         postId: "9",
         title: "Building REST APIs with Node.js",
-        imgURL:"",
+        imgURL: "",
         content: "REST APIs are a popular way to structure web services...",
         tags: ["Node.js", "REST", "API"],
         categories: ["Development", "Backend"],

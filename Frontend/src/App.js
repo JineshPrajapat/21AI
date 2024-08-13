@@ -11,10 +11,13 @@ import Contact from './Pages/Contact';
 import Blog from './Pages/Blog';
 import { Route, Routes } from 'react-router-dom';
 import ScrollToTop from './hooks/ScrollToTop';
+import Research from './Pages/Research';
+import Courses from './Pages/Courses';
+import BlogDetails from './Component/BlogDetails';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App dark:bg-gray-900">
       <Header />
       <Routes>
         <Route path="/" element={
@@ -27,7 +30,11 @@ function App() {
             <Contact />
           </>
         } />
-        <Route path="/blog" element={<Blog />} />
+        <Route path="/Blog" element={<Blog />} />
+        <Route path="/Blog/:blogTitle" element={<BlogDetails/>}/>
+        <Route path='/Research/*' element={<Research/>}/>
+        <Route path='/Courses/*' element={<Courses/>}/>
+
       </Routes>
       <Footer />
       <ScrollToTop/>
