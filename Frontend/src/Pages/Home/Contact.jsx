@@ -1,6 +1,8 @@
 import React from 'react';
 import { IoLocationOutline, IoCallOutline } from "react-icons/io5";
 import { HiOutlineMail } from "react-icons/hi";
+import { useHeaderHeight } from "../../Context/HeaderHeightContext";
+
 
 const contactInfo = [
     {
@@ -21,8 +23,10 @@ const contactInfo = [
 ];
 
 const Contact = () => {
+    const headerHeight  = useHeaderHeight();
+
     return (
-        <section id="contact" className="contact section py-20 lg:px-20 dark:bg-gray-900">
+        <section id="contact" className={`contact section py-20 lg:px-20 dark:bg-gray-900 scroll-mt-[11vh]`}>
             <div className="container mx-auto mb-10 text-center" data-aos="fade-up">
                 <div className='flex flex-col justify-center items-center gap-2'>
                     <h2 className="text-4xl font-semibold text-gray-800 dark:text-white">Contact</h2>

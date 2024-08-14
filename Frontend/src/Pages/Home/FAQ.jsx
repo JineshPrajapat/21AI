@@ -53,12 +53,12 @@ const FAQ = () => {
                                     className={`faq-item p-6 text-left bg-white dark:bg-gray-800 rounded-lg shadow-lg transition ${activeIndex === index ? 'faq-active' : ''}`}
                                     onClick={() => toggleFAQ(index)}
                                 >
-                                    <h3 className="flex justify-between items-center text-lg font-semibold text-gray-800 dark:text-white  cursor-pointer transition">
-                                        <div className='flex items-start justify-center hover:text-blue-500'>
+                                    <h3 className="flex justify-between items-center gap-x-2 lg:text-lg text-sm font-semibold text-gray-800 dark:text-white  cursor-pointer transition">
+                                        <div className='flex max-w-[90%] items-start justify-center hover:text-blue-500'>
                                             <span className="num text-blue-500 pr-2">{index + 1}.</span>
                                             <span>{item.question}</span>
                                         </div>
-                                        <IoIosArrowDown className={`text-2xl lg:text-xl hover:text-blue-500 text-gray-800 dark:text-white cursor-pointer transition-transform duration-300 ${activeIndex === index ? '-rotate-180 text-blue-500' : ''}`}/>
+                                        <IoIosArrowDown className={`text-2xl lg:text-xl w-max hover:text-blue-500 text-gray-800 dark:text-white cursor-pointer transition-transform duration-300 ${activeIndex === index ? '-rotate-180 text-blue-500' : ''}`} />
                                     </h3>
                                     <div className={` mt-4 overflow-hidden transition-all duration-300 ${activeIndex === index ? 'block' : 'hidden'}`}>
                                         <p className="text-gray-600 dark:text-gray-300">{item.answer}</p>

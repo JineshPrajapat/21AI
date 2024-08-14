@@ -5,38 +5,38 @@ import { IoIosApps } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
 import logo from '../assets/images/logo_black.svg'
 import logo2 from '../assets/images/logo_white.svg'
-import logo3 from '../assets/images/L1.png'
 
 const navLinks = [
-    { label: 'Home', path: "#hero" },
-    { label: 'About', path: "#about" },
-    { label: 'Services', path: '#services' },
-    { label: 'Blog', path: "/Blog" },
+    { _id: 0, label: 'Home', path: "#hero" },
+    { _id: 1, label: 'About', path: "#about" },
+    { _id: 2, label: 'Services', path: '#services' },
+    { _id: 3, label: 'Blog', path: "/Blog" },
     {
-        label: 'More',
+        _id: 4, label: 'More',
         subMenu: [
             {
-                label: 'Research',
+                _id: 0, label: 'Research',
                 subMenu: [
-                    { label: 'Machine Learning', path: '/Research/Machine Learning' },
-                    { label: 'Computer Vision', path: '/Research/Computer Vision' },
-                    { label: 'Natural Language Processing', path: '/Research/Natural Language Processing' },
-                    { label: 'AI Application', path: '/Research/AI Application' },
+                    { _id: 0, label: 'Machine Learning', path: '/Researches/Machine Learning' },
+                    { _id: 1, label: 'Computer Vision', path: '/Researches/Computer Vision' },
+                    { _id: 2, label: 'Natural Language Processing', path: '/Researches/Natural Language Processing' },
+                    { _id: 3, label: 'AI Application', path: '/Researches/AI Application' },
                 ],
             },
             {
-                label: 'Courses',
+                _id: 1, label: 'Courses',
                 subMenu: [
-                    { label: 'Machine Learning ', path: '/Courses/Machine Learning' },
-                    { label: 'Computer Vision ', path: '/Courses/Computer Vision' },
-                    { label: 'Deep Learning ', path: '/Courses/Deep Learning' },
-                    { label: 'Natural Language Processing', path: '/Courses/Natural Language Processing' },
+                    { _id: 0, label: 'Machine Learning ', path: '/Courses/Machine Learning' },
+                    { _id: 1, label: 'Computer Vision ', path: '/Courses/Computer Vision' },
+                    { _id: 2, label: 'Deep Learning ', path: '/Courses/Deep Learning' },
+                    { _id: 3, label: 'Natural Language Processing', path: '/Courses/Natural Language Processing' },
+                    { _id: 4, label: 'Quantum Compunting', path: '/Courses/Quantum Computing' },
                 ],
             },
-            { label: 'NewsLetter', path: "/NewsLetter" },
+            { _id: 2, label: 'NewsLetter', path: "/NewsLetter" },
         ],
     },
-    { label: 'Contact', path: '#contact' },
+    { _id: 5, label: 'Contact', path: '#contact' },
 ];
 
 const Header = () => {
@@ -54,12 +54,18 @@ const Header = () => {
             const section = document.getElementById(sectionId);
 
             if (section) {
+                const offset = 100;
+                const sectionPosition = section.offsetTop - 100;
+                // window.scrollTo({ top: sectionPosition, behavior: "smooth" })
                 section.scrollIntoView({ behavior: "smooth" });
             } else {
                 navigate("/");
                 setTimeout(() => {
                     const section = document.getElementById(sectionId);
                     if (section) {
+                        const offset = 100;
+                        const sectionPosition = section.offsetTop - 150;
+                        // window.scrollTo({ top: sectionPosition, behavior: "smooth" })
                         section.scrollIntoView({ behavior: "smooth" });
                     }
                 }, 100);
@@ -102,10 +108,10 @@ const Header = () => {
     }, [location]);
 
     return (
-        <header className={`sticky top-0 flex items-center bg-black text-white p-4 transition-all duration-500 z-[997] ${isMobileMenuOpen ? 'shadow-md' : ''}`}>
+        <header className={`sticky top-0 flex items-center bg-black text-white p-4 transition-all duration-500 z-[997] ${isMobileMenuOpen ? 'shadow-md' : ''} `}>
             <div className="container lg:mx-20 flex items-center justify-between relative">
                 <Link to="/" className="flex items-center">
-                    <div className="h-20"><img src={logo2} alt='logo' className=' h-full w-full'/></div>
+                    <div className="h-10"><img src={logo2} alt='logo' className=' h-full w-full' /></div>
                 </Link>
 
                 <nav className={`lg:flex lg:items-center lg:relative lg:shadow-none z-[9997] ${isMobileMenuOpen ? 'fixed inset-0 bg-gray-900 bg-opacity-80' : 'hidden'}`}>
@@ -121,22 +127,22 @@ const Header = () => {
                                     onMouseLeave={() => setHoveredDropdown(null)}
                                 >
                                     <span
-                                        onClick={() => handleNavClick(link.path)}
+                                        onClick={() => handleNavClick(link?.path)}
                                         className={`cursor-pointer relative font-medium transition-all duration-500 flex items-center justify-between gap-1
                                         before:content-[''] before:absolute before:w-full before:h-[2px] before:bottom-[-5px] before:left-0 lg:before:bg-white before:scale-x-0 before:origin-left before:transition-transform before:duration-500 before:ease-in-out
                                         hover:before:scale-x-100 ${activeSection === link.path ? "lg:before:scale-x-100 text-blue-600 lg:text-white" : ""}`}
                                     >
-                                        {link.label}
+                                        {link?.label}
                                         {link?.subMenu && <IoIosArrowDown />}
                                     </span>
 
                                     {link.subMenu && (
                                         <ul
-                                            className={`${!isMobileMenuOpen ? "absolute left-0 mt-4 w-max bg-white text-black rounded-md shadow-lg" : "bg-gray-100 rounded-md"} transition-all duration-300 ease-in ${hoveredDropdown === index ? 'lg:translate-y-0 lg:opacity-100 visible' : 'lg:translate-y-4 lg:opacity-0 lg:invisible '}`}
+                                            className={`${!isMobileMenuOpen ? "absolute left-0 mt-4 w-max bg-white dark:bg-gray-800 dark:text-gray-300 text-black  rounded-md shadow-lg" : "bg-gray-100 rounded-md"} transition-all duration-300 ease-in ${hoveredDropdown === index ? 'lg:translate-y-0 lg:opacity-100 visible' : 'lg:translate-y-4 lg:opacity-0 lg:invisible '}`}
                                             onMouseEnter={() => setHoveredDropdown(index)}
                                             onMouseLeave={() => setHoveredDropdown(null)}
                                         >
-                                            {link.subMenu.map((subLink, subIndex) => (
+                                            {link?.subMenu.map((subLink, subIndex) => (
                                                 <li
                                                     key={subIndex}
                                                     className="relative"
@@ -144,7 +150,7 @@ const Header = () => {
                                                     onMouseLeave={() => setHoveredSubDropdown(null)}
                                                 >
                                                     <span
-                                                        onClick={() => handleNavClick(subLink?.path)}
+                                                        onClick={() => handleNavClick(subLink?.path && (subLink?.path).replaceAll(" ", "-"))}
                                                         className={`cursor-pointer flex items-center justify-between gap-2 px-4 py-2 hover:text-blue-700 transition-all duration-500 ${isMobileMenuOpen ? "font-normal" : ""}`}
                                                     >
                                                         {subLink.label}
@@ -152,7 +158,7 @@ const Header = () => {
                                                     </span>
                                                     {subLink.subMenu && (
                                                         <ul
-                                                            className={`${!isMobileMenuOpen ? "absolute right-full top-0 mt-0 w-max bg-white text-black rounded-md shadow-lg" : ""} transition-all duration-300 ease-in ${hoveredSubDropdown === subIndex ? 'translate-x-2 lg:translate-x-0 lg:opacity-100 lg:visible block' : 'lg:translate-x-4 lg:opacity-0 lg:invisible hidden'
+                                                            className={`${!isMobileMenuOpen ? "absolute right-full top-0 mt-0 w-max bg-white dark:bg-gray-800 dark:text-gray-300 text-black rounded-md shadow-lg" : ""} transition-all duration-300 ease-in ${hoveredSubDropdown === subIndex ? 'translate-x-2 lg:translate-x-0 lg:opacity-100 lg:visible block' : 'lg:translate-x-4 lg:opacity-0 lg:invisible hidden'
                                                                 }`}
                                                             onMouseEnter={() => setHoveredSubDropdown(subIndex)}
                                                             onMouseLeave={() => setHoveredSubDropdown(null)}
@@ -161,7 +167,7 @@ const Header = () => {
                                                             {subLink.subMenu.map((deepLink, deepIndex) => (
                                                                 <li key={deepIndex}>
                                                                     <span
-                                                                        onClick={() => handleNavClick(deepLink.path)}
+                                                                        onClick={() => handleNavClick(deepLink.path && (deepLink.path).replaceAll(" ", "-"))}
                                                                         className={`cursor-pointer block px-4 py-2 hover:text-blue-700 transition-all duration-300 ${isMobileMenuOpen ? "font-light" : ""}`}
                                                                     >
                                                                         {deepLink.label}

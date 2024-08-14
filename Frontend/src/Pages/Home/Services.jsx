@@ -44,7 +44,7 @@ const servicesData = [
 
 const Services = () => {
     return (
-        <section id="services" className="services section py-12 px-3 lg:px-20 bg-gray-50 dark:bg-gray-900">
+        <section id="services" className="services scroll-mt-[11vh] section py-12 px-3 lg:p-20 bg-gray-50 dark:bg-gray-900">
             <div className="container mx-auto text-center mb-12"
                 data-aos="fade-up"
                 data-aos-delay="100"

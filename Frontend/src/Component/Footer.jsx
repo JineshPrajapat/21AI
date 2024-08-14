@@ -90,8 +90,7 @@ const Footer = () => {
                     <NavLink
                         to="/"
                         className="text-left font-inter italic font-extrabold text-2xl lg:text-5xl"
-                    >
-                        21AI
+                    >GARUD21AI
                     </NavLink>
                 </div>
                 <div className="text-xl font-normal text-left w-full">
