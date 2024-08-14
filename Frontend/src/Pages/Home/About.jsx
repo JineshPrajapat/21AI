@@ -1,11 +1,17 @@
 import React from "react";
-import jinesh from "../../src/assets/images/jinesh.png"
+import jinesh from "../../../src/assets/images/jinesh.png";
+// import { useHeaderHeight } from "../../Context/HeaderHeightContext";
 
 const About = () => {
+
     return (
-        <section id="about" class="" data-aos="fade-up"
-        data-aos-delay="100">
-            <main className=" px-8 py-10 lg:m-20 rounded-md shadow-[0_2px_10px_2px_rgba(0,0,0,0.1)] dark:bg-gray-800 flex flex-col gap-6 lg:flex-row justify-between items-center">
+        <section id="about" className="scroll-mt-[11vh] py-12 section px-3 lg:p-20" data-aos="fade-up"
+            data-aos-delay="100">
+            <div className='flex flex-col justify-center items-center gap-2'>
+                <h2 className="text-4xl font-semibold text-gray-800 dark:text-white">About Us</h2>
+                <hr className=" flex justify-center items-center w-16 h-1 mb-8 bg-blue-500" />
+            </div>
+            <main className=" px-8 py-10 rounded-md shadow-[0_2px_10px_2px_rgba(0,0,0,0.1)] dark:bg-gray-800 flex flex-col gap-6 lg:flex-row justify-between items-center">
                 <div className="lg:w-1/3 flex flex-col justify-start items-center ">
                     <div className=" w-64 h-64 rounded-full mb-4">
                         <img src={jinesh} className="w-full h-full rounded-full" alt='profileImage' />
@@ -18,9 +24,10 @@ const About = () => {
                     </div>
                 </div>
 
-                <div className="lg:w-3/4 text-xl text-justify text-slate-700 dark:text-slate-300">
-                    <h4 className="text-left text-3xl pb-2 text-black dark:text-white font-bold">About me</h4>
-                    <hr className="w-20 h-1 mb-8 bg-blue-500" />
+                <div className="lg:w-3/4 lg:text-xl text-sm text-justify text-slate-700 dark:text-slate-300">
+
+
+
                     <p>
                         Curabitur non nulla sit amet nisl tempus convallis quis ac
                         lectus. Curabitur arcu erat, accumsan id imperdiet et,
@@ -42,6 +49,7 @@ const About = () => {
                         accumsan tincidunt. Mauris blandit aliquet elit, eget
                         tincidunt nibh pulvinar a.
                     </p>
+
                 </div>
             </main>
         </section>
