@@ -18,8 +18,8 @@ const About = () => {
                     </div>
                     <div className="flex flex-col gap-2 justify-start items-start text-slate-700 dark:text-slate-300">
                         <p className="text-left"><strong>Name: </strong><span>Jinesh Prajapat</span></p>
-                        <p className="text-left"><strong>Profile: </strong><span>Machine Learning Engineer</span></p>
-                        <p className="text-left"><strong>Email: </strong><span>bs9396684@gmail.com</span></p>
+                        <p className="text-left"><strong>Profile: </strong><span>Software Developer Engineer</span></p>
+                        <p className="text-left"><strong>Email: </strong><span>prajapatjinesh585@gmail.com</span></p>
                         <p className="text-left"><strong>Phone: </strong><span>+91-7023337229</span></p>
                     </div>
                 </div>
@@ -29,25 +29,15 @@ const About = () => {
 
 
                     <p>
-                        Curabitur non nulla sit amet nisl tempus convallis quis ac
-                        lectus. Curabitur arcu erat, accumsan id imperdiet et,
-                        porttitor at sem. Praesent sapien massa, convallis a
-                        pellentesque nec, egestas non nisi. Nulla porttitor accumsan
-                        tincidunt.
+                    I am Jinesh Prajapat, currently pursuing an B.Tech in Artificial Intelligence and Data Science Engineering at the College of Technology And Engineering, Udaipur. Originally from Udaipur, the City of Lakes.
                     </p>
                     <br />
                     <p>
-                        Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                        Vivamus suscipit tortor eget felis porttitor volutpat.
-                        Vestibulum ac diam sit amet quam vehicula elementum sed sit
-                        amet dui. porttitor at sem.
+                    I'm a curious tech enthusiast, always on the lookout for new adventures and learning opportunities. Innovation fuels my fire, and I thrive on finding imaginative solutions to all kinds of problems. Whether it's tackling a coding challenge or brainstorming a new project idea. I have a strong passion for tackling problems using data structures and algorithms.
                     </p>
                     <br />
                     <p>
-                        Nulla porttitor accumsan tincidunt. Quisque velit nisi,
-                        pretium ut lacinia in, elementum id enim. Nulla porttitor
-                        accumsan tincidunt. Mauris blandit aliquet elit, eget
-                        tincidunt nibh pulvinar a.
+                    I am excited to contribute my creativity and analytical mindset to develop efficient and elegant solutions that address real-world challenges.
                     </p>
 
                 </div>

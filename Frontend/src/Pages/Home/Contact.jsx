@@ -8,17 +8,17 @@ const contactInfo = [
     {
         icon: IoLocationOutline,
         title: 'Address',
-        description: 'A108 Adam Street, New York, NY 535022',
+        description: 'Udaipur, Rajasthan',
     },
     {
         icon: IoCallOutline,
         title: 'Call Us',
-        description: '+91 8905 0097 54',
+        description: '+91 8905009854',
     },
     {
         icon: HiOutlineMail,
         title: 'Email Us',
-        description: 'info@21ai.com',
+        description: 'team@garud21ai.com',
     },
 ];
 
@@ -33,7 +33,8 @@ const Contact = () => {
                     <hr className=" flex justify-center items-center w-16 h-1 mb-8 bg-t bg-blue-500" />
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 px-4">
-                    Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
+                    <span>Let's Work Together</span><br/>
+                For work inquires feel free to get in touch with us
                 </p>
             </div>
 

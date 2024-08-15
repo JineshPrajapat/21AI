@@ -36,10 +36,10 @@ const ResearchDetails = () => {
     return (
         <section id="researcchdetails" className=" py-10 lg:py-20 dark:bg-gray-500 lg:px-20 p-4">
 
-            <div className="mb-10 text-gray-600 dark:text-slate-300 flex items-center">
-                <Link to={`/Researches/${researchTitle}`} className=" hover:text-gray-800 dark:hover:text-slate-300 hover:underline" >{getDecodeURL(researchTitle)}</Link>
-                <IoIosArrowForward />
-                <Link to={`/Research/${researchTitle}/${postTitle}`} className=" hover:text-gray-800 dark:hover:text-slate-300 hover:underline" >{getDecodeURL(postTitle)}</Link>
+            <div className="mb-10 text-gray-600 dark:text-slate-300 flex gap-1 items-center text-xs text-left overflow-y-auto overflow-x-scroll">
+                <Link to={`/Researches/${researchTitle}`} className=" hover:text-gray-800 dark:hover:text-slate-300 hover:underline whitespace-nowrap" >{getDecodeURL(researchTitle)}</Link>
+                /
+                <Link to={`/Research/${researchTitle}/${postTitle}`} className=" hover:text-gray-800 dark:hover:text-slate-300 hover:underline whitespace-nowrap" >{getDecodeURL(postTitle)}</Link>
             </div>
 
             <Heading text={getDecodeURL(postTitle)}/>

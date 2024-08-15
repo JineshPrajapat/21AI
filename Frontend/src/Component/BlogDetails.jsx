@@ -31,14 +31,14 @@ const BlogDetails = () => {
 
     return (
         <div className=" py-10 px-5 lg:py-20 dark:bg-gray-500 lg:px-20 p-4">
-            <div className="mb-10 text-sm text-gray-400 dark:text-slate-400 flex items-center">
-                <Link to={"/"} className=" hover:text-gray-600 dark:hover:text-slate-300" >{"Home"}</Link>
-                <IoIosArrowForward />
-                <Link to={"/Blog"} className=" hover:text-gray-600 dark:hover:text-slate-300" >{"Blog"}</Link>
-                <IoIosArrowForward />
-                <Link to={`/Blog/${blogTitle}`} className="hover:text-gray-600 dark:hover:text-slate-300" >{getDecodeURL(blogTitle)}</Link>
+            <div className="mb-10 text-sm text-gray-400 dark:text-slate-400 flex gap-1 items-center text-left overflow-y-auto overflow-x-scroll">
+                <Link to={"/"} className=" hover:text-gray-600 dark:hover:text-slate-300 whitespace-nowrap" >{"Home"}</Link>
+                /
+                <Link to={"/Blog"} className=" hover:text-gray-600 dark:hover:text-slate-300 whitespace-nowrap" >{"Blog"}</Link>
+                /
+                <Link to={`/Blog/${blogTitle}`} className="hover:text-gray-600 dark:hover:text-slate-300 whitespace-nowrap" >{getDecodeURL(blogTitle)}</Link>
             </div>
-            <Heading text={blogTitle}/>
+            <Heading text={getDecodeURL(blogTitle)}/>
             <div className="" dangerouslySetInnerHTML={{ __html: blogDetail?.content }} />
         </div>
     )

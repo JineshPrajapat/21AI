@@ -34,14 +34,14 @@ const BlogTags = () => {
     return (
 
         <div className="py-10 px-5 lg:p-20 text-left">
-            <div className="mb-10 text-sm text-gray-400 dark:text-slate-400 flex items-center">
-                <Link to={"/"} className=" hover:text-gray-600 dark:hover:text-slate-300" >{"Home"}</Link>
-                <IoIosArrowForward />
-                <Link to={"/Blog"} className=" hover:text-gray-600 dark:hover:text-slate-300" >{"Blog"}</Link>
-                <IoIosArrowForward />
-                <Link to={"/Blog"} className="hover:text-gray-600 dark:hover:text-slate-300" >{"Tag"}</Link>
-                <IoIosArrowForward />
-                <Link to={`/Blog/${tagName}`} className="hover:text-gray-600 dark:hover:text-slate-300" >{tagName}</Link>
+            <div className="mb-10 text-sm text-gray-400 dark:text-slate-400 flex items-center gap-1 text-left overflow-y-auto overflow-x-scroll">
+                <Link to={"/"} className=" hover:text-gray-600 dark:hover:text-slate-300 whitespace-nowrap" >{"Home"}</Link>
+                /
+                <Link to={"/Blog"} className=" hover:text-gray-600 dark:hover:text-slate-300 whitespace-nowrap" >{"Blog"}</Link>
+                /
+                <Link to={"/Blog"} className="hover:text-gray-600 dark:hover:text-slate-300 whitespace-nowrap" >{"Tag"}</Link>
+                /
+                <Link to={`/Blog/${tagName}`} className="hover:text-gray-600 dark:hover:text-slate-300 whitespace-nowrap" >{tagName}</Link>
             </div>
 
             <Heading text={`${tagName}`} />

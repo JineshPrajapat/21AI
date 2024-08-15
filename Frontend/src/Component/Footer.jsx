@@ -5,14 +5,15 @@ import { SiGithub } from "react-icons/si";
 import { RiTwitterXLine } from "react-icons/ri";
 import { BsTelephoneFill } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
+import logo2 from '../assets/images/garud21ai.svg'
 
 
 const socialink = [
 
-    {
-        imgUrl: RiTwitterXLine,
-        link: "#"
-    },
+    // {
+    //     imgUrl: RiTwitterXLine,
+    //     link: "#"
+    // },
     {
         imgUrl: SiGithub,
         link: "https://github.com/JineshPrajapat"
@@ -26,55 +27,55 @@ const socialink = [
 const courses = [
     {
         name: "Deep Learning",
-        link: "/courses"
+        link: "/Courses/Deep Learning"
     },
     {
         name: "Machine Learning",
-        link: '/Course/Machine Learning'
+        link: '/Courses/Machine Learning'
     },
     {
         name: "Natural Language Processing ",
-        link: '/Course/Natural Language Processing'
+        link: '/Courses/Natural Language Processing'
     },
     {
         name: "Computer Vision",
-        link: '/Course/Computer Vision'
+        link: '/Courses/Computer Vision'
     },
 ]
 
 const Research = [
     {
         name: "Machine Learning",
-        link: '/Research/Machine Learning'
+        link: '/Researches/Machine Learning'
     },
     {
         name: "Natural Language Processing ",
-        link: '/Research/Natural Language Processing'
+        link: '/Researches/Natural Language Processingn'
     },
     {
         name: "Computer Vision",
-        link: '/Research/Machine Learning'
+        link: '/Researches/Computer Vision'
     },
     {
         name: "AI Application",
-        link: '/Research/AI Application'
+        link: '/Researches/AI Application'
     },
 ]
 
 const contactUs = [
+    // {
+    //     name: "+91 9972148403​",
+    //     link: "tel:+91 9972148403​",
+    //     imgUrl: BsTelephoneFill
+    // },
     {
-        name: "+91 9972148403​",
-        link: "tel:+91 9972148403​",
+        name: "+91 8905009854",
+        link: "tel:+91 8905009854",
         imgUrl: BsTelephoneFill
     },
     {
-        name: "+91 9319339686",
-        link: "tel:+91 9319339686",
-        imgUrl: BsTelephoneFill
-    },
-    {
-        name: "team@ai21.com",
-        link: "mailto:team@ai21.com",
+        name: "team@garud21ai.com",
+        link: "mailto:prajapatjinesh585.com",
         imgUrl: HiOutlineMail
     },
 ]
@@ -90,7 +91,8 @@ const Footer = () => {
                     <NavLink
                         to="/"
                         className="text-left font-inter italic font-extrabold text-2xl lg:text-5xl"
-                    >GARUD21AI
+                    >                        
+                    <div className=" h-6 lg:h-10"><img src={logo2} alt='logo' className=' h-full w-full' /></div>
                     </NavLink>
                 </div>
                 <div className="text-xl font-normal text-left w-full">
