@@ -1,33 +1,29 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { blog } from "../data/blog";
-import { IoIosArrowForward } from "react-icons/io";
 import Heading from "./Heading";
 import { getDecodeURL } from "../utils/getDecodeURL";
 import { fetchData } from "../Services/apiConnector";
 import { setSingleBlogData } from "../Reducer/Slice/blogSlice";
 import { BASE_URL } from "../Services/api";
 import { useDispatch, useSelector } from "react-redux";
+import PreLoader from "./PreLoader";
 
 const BlogDetails = () => {
     const { blogTitle } = useParams();
     const dispatch = useDispatch();
-    const blogDetail = useSelector(state =>state.blog.singleBlogData);
-
-    const [data, setData] = useState([]);
+    const blogDetail = useSelector(state => state?.blog?.singleBlogData);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        fetchData(`${BASE_URL}/blog.json`, setData);
-    }, [ blogTitle ]);
+        document.title = blogDetail?.content ? (blogTitle).replaceAll("-", " ") : "Page not found - Garud21AI";
 
-    useEffect(()=>{
-        if(data){
+        setIsLoading(true);
+        fetchData(`${BASE_URL}/blog.json`, (data) => {
             const filteredData = data?.find((item) => item.title === blogTitle.replaceAll("-", " "));
             dispatch(setSingleBlogData(filteredData));
-        }
-    }, [data]);
-
-    // console.log("data", blogDetail);
+            setIsLoading(false);
+        });
+    }, [blogTitle, dispatch]);
 
     return (
         <div className=" py-10 px-5 lg:py-20 dark:bg-gray-500 lg:px-20 p-4">
@@ -38,8 +34,19 @@ const BlogDetails = () => {
                 /
                 <Link to={`/Blog/${blogTitle}`} className="hover:text-gray-600 dark:hover:text-slate-300 whitespace-nowrap" >{getDecodeURL(blogTitle)}</Link>
             </div>
-            <Heading text={getDecodeURL(blogTitle)}/>
-            <div className="" dangerouslySetInnerHTML={{ __html: blogDetail?.content }} />
+
+            {isLoading ? (
+                <PreLoader />
+            ) : blogDetail?.content ? (
+                <>
+                    <Heading text={getDecodeURL(blogTitle)} />
+                    <div className="" dangerouslySetInnerHTML={{ __html: blogDetail?.content }} />
+                </>
+            ) : (
+                <div className="flex justify-center items-center lg:text-3xl dark:text-slate-300">
+                    <p>Blog not found!</p>
+                </div>
+            )}
         </div>
     )
 };

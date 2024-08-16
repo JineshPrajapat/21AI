@@ -18,9 +18,9 @@ import BlogTags from './Component/BlogTags';
 import CourseDetails from './Component/CourseDetails';
 import ResearchDetails from './Component/ResearchDetails';
 import NewsLetter from './Pages/NewsLetter';
+import NotFound from './Component/NotFound';
 
 function App() {
-
 
   return (
     <div className="App dark:bg-gray-900">
@@ -44,6 +44,8 @@ function App() {
         <Route path='/Courses/*' element={<Courses />} />
         <Route path='/Course/:courseTitle/:postTitle' element={<CourseDetails />} />
         <Route path='/Newsletter' element={<NewsLetter />} />
+
+        <Route path="*" element={<NotFound />} />
 
       </Routes>
       <Footer />

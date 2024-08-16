@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosApps } from "react-icons/io";
-import logo2 from '../assets/images/garud21ai.svg'
 import HeaderMobile from './HeaderMobile';
 import DarkModeToggle from './DarkModeToggle';
+import images from '../constants/images';
 
 const navLinks = [
     { _id: 0, label: 'Home', path: "#hero" },
@@ -120,14 +120,15 @@ const Header = () => {
 
 
     return (
-        <header className={`sticky top-0 flex items-center bg-black text-white p-4 transition-all duration-500 z-[997] ${isMobileMenuOpen ? 'shadow-md' : ''} `}>
+        <header className={`sticky top-0 flex items-center bg-black dark:bg-gray-950 shadow-sm lg:shadow-none dark:shadow-md dark:shadow-gray-800 shadow-white text-white p-4 transition-all duration-500 z-[997] ${isMobileMenuOpen ? 'shadow-md' : ''} `}>
             <div className="container lg:mx-20 flex items-center justify-between relative">
                 <div className='flex items-center justify-between w-full'>
-                    <Link to="/" className="flex items-center">
-                        <div className=" h-6 lg:h-10"><img src={logo2} alt='logo' className=' h-full w-full' /></div>
+                    <Link to="/" className="flex items-center gap-1">
+                        <div className=" h-8 lg:h-14"><img src={images?.garud} alt='logo' className=' h-full w-full' /></div>
+                        <div className=" h-6 lg:h-10"><img src={images?.brandName} alt='logo' className=' h-full w-full' /></div>
                     </Link>
                     <div className='lg:hidden'>
-                    <DarkModeToggle  />
+                        <DarkModeToggle />
                     </div>
                 </div>
 
@@ -209,7 +210,7 @@ const Header = () => {
                                 )
                             })}
                         </ul>
-                        <DarkModeToggle/>
+                        <DarkModeToggle />
                     </nav>
                 }
                 {/* <IoMdClose className={`${isMobileMenuOpen ? " z-[1000] text-black dark:text-slate-300" : "hidden "} absolute top-8 right-2 text-2xl`} onClick={() => setIsMobileMenuOpen(false)} /> */}

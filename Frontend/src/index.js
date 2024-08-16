@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { HelmetProvider } from 'react-helmet-async';
 import { store } from './Reducer/store';
 import PreLoader from './Component/PreLoader';
 
@@ -12,13 +13,18 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Suspense fallback={<PreLoader/>} >
-        <Provider store={store}>
-          <App />
-        </Provider>
-      </Suspense>
+      <Provider store={store}>
+        <HelmetProvider>
+          <Suspense fallback={<PreLoader />} >
+            <App />
+          </Suspense>
+        </HelmetProvider>
+      </Provider>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
+
+  document.getElementById('root')
+
 );
 
 // If you want to start measuring performance in your app, pass a function

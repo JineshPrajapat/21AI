@@ -1,11 +1,12 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { ImLinkedin2 } from "react-icons/im";
 import { SiGithub } from "react-icons/si";
 import { RiTwitterXLine } from "react-icons/ri";
 import { BsTelephoneFill } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
 import logo2 from '../assets/images/garud21ai.svg'
+import images from '../constants/images';
 
 
 const socialink = [
@@ -50,7 +51,7 @@ const Research = [
     },
     {
         name: "Natural Language Processing ",
-        link: '/Researches/Natural Language Processingn'
+        link: '/Researches/Natural Language Processing'
     },
     {
         name: "Computer Vision",
@@ -85,30 +86,31 @@ const contactUs = [
 
 const Footer = () => {
     return (
-        <footer className='bg-black flex flex-col items-center  text-white px-5 py-3 md:px-20 md:py-5'>
-            <div className="flex flex-col  items-center gap-1 mb-4">
-                <div className="flex justify-center w-full">
+        <footer className='bg-black dark:bg-gray-950 shadow-2xl shadow-white flex flex-col items-center  text-white px-5 py-3 md:px-20 md:py-5'>
+            <div className="flex flex-col  items-center gap-1 my-8">
+                <div className="flex justify-center w-full ">
                     <NavLink
                         to="/"
-                        className="text-left font-inter italic font-extrabold text-2xl lg:text-5xl"
-                    >                        
-                    <div className=" h-6 lg:h-10"><img src={logo2} alt='logo' className=' h-full w-full' /></div>
+                        className="text-left flex items-center gap-1 font-inter italic font-extrabold text-2xl lg:text-5xl"
+                    >
+                        <div className=" h-8 lg:h-14"><img src={images?.garud} alt='logo' className=' h-full w-full' /></div>
+                        <div className=" h-6 lg:h-10"><img src={images?.brandName} alt='logo' className=' h-full w-full' /></div>
                     </NavLink>
                 </div>
-                <div className="text-xl font-normal text-left w-full">
+                <div className="text-base font-normal text-center lg:text-left w-full">
                     Reengineering Business operations with AI is latest innovation
                 </div>
             </div>
 
 
-            <div className='flex flex-col w-full gap-4 justify-start md:grid grid-cols-3 md:justify-between py-4 whitespace-nowrap'>
+            <div className='flex flex-col w-full gap-8 justify-start md:grid grid-cols-3 md:justify-between py-4 whitespace-nowrap'>
 
                 {/* contact */}
                 <div className='contact text-left'>
                     <h2 className='text-lg font-semibold uppercase pb-2'>Contact Us</h2>
                     <div className='flex flex-col gap-1 lg:pb-8 '>
                         {contactUs.map((data, index) => (
-                            <div className='flex text-base items-center gap-2'>
+                            <div className='flex text-base items-center gap-2 text-gray-400'>
                                 <div className='w-6 h-6 flex items-center'>
                                     <data.imgUrl alt="" />
                                 </div>
@@ -120,19 +122,19 @@ const Footer = () => {
 
                 {/* course */}
                 <div className='Courses text-left'>
-                    <h2 className='text-lg font-semibold uppercase pb-2'>Courses</h2>
-                    <div className='flex flex-col list-disc pl-2'>
+                    <h2 className='text-xl font-semibold uppercase pb-1'>Courses</h2>
+                    <div className='flex flex-col gap-2 list-none'>
                         {courses.map((data, index) => (
-                            <li className='text-base '><a href={data?.link}>{data.name}</a></li>
+                            <li className='text-base duration-300 transition-all ease-in-out text-gray-400 hover:underline'><Link to={data?.link && (data?.link).replaceAll(" ", "-")}>{data.name}</Link></li>
                         ))}
                     </div>
                 </div>
 
                 <div className='research text-left '>
-                    <h2 className='text-lg font-semibold uppercase pb-2'>Quick Links</h2>
-                    <div className='flex flex-col list-disc pl-2'>
+                    <h2 className='text-xl font-semibold uppercase pb-1'>Research</h2>
+                    <div className='flex flex-col gap-2 list-none'>
                         {Research.map((data, index) => (
-                            <li className='text-base'><a href={data?.link}>{data.name}</a></li>
+                            <li className='text-base duration-300 transition-all ease-in-out text-gray-400 hover:underline'><Link to={data?.link && (data?.link).replaceAll(" ", "-")}>{data.name}</Link></li>
                         ))}
                     </div>
                 </div>

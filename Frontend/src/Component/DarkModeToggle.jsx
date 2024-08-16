@@ -8,7 +8,7 @@ const DarkModeToggle = () => {
   return (
     <button
       onClick={toggleDarkMode}
-      className={`lg:p-2 p-1 rounded text-xl ${isDarkMode ? 'lg:bg-gray-800 text-white' : 'lg:bg-gray-300 text-white lg:text-black'}`}
+      className={`lg:p-2 p-1 rounded-full text-xl ${isDarkMode ? 'lg:bg-gray-800 text-white' : 'lg:bg-gray-300 text-white lg:text-black'}`}
     >
       {isDarkMode ? <MdLightMode/> : <MdOutlineLightMode/>}
     </button>

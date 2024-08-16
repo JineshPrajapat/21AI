@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-import backgroundanimated from "../../../src/assets/video/backgroundanimated.mp4";
+import images from "../../constants/images";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const HeroSection = () => {
     useEffect(() => {
+        document.title = "Garud 21AI";
         AOS.init();
     }, []);
 
@@ -18,7 +19,7 @@ const HeroSection = () => {
                     autoPlay
                     muted
                 >
-                    <source src={backgroundanimated} type="video/mp4" />
+                    <source src={images?.backgroundanimated} type="video/mp4" />
                 </video>
                 <div  className="absolute w-full lg:px-60 top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2 text-white text-center -mt-6">
                     <div data-aos="fade-up" data-aos-delay="300">

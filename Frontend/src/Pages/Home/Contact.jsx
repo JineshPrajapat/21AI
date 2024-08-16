@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { IoLocationOutline, IoCallOutline } from "react-icons/io5";
 import { HiOutlineMail } from "react-icons/hi";
-import { useHeaderHeight } from "../../Context/HeaderHeightContext";
+import useFormStatus from '../../hooks/useFormStatus';
+import emailjs from "@emailjs/browser"
+import { SERVICE_ID, SERVICE_PUBLIC_KEY, SERVICE_TEMPLATE } from '../../Services/api';
 
 
 const contactInfo = [
@@ -23,7 +25,33 @@ const contactInfo = [
 ];
 
 const Contact = () => {
-    const headerHeight  = useHeaderHeight();
+
+    const form = useRef();
+    const { status, error, startSubmitting, submitSuccess, submitError, resetFormStatus } = useFormStatus();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+        startSubmitting();
+
+        emailjs.sendForm(SERVICE_ID, SERVICE_TEMPLATE, form.current, SERVICE_PUBLIC_KEY)
+            .then(
+                () => {
+                    submitSuccess();
+                    // alert('Message successfully sent!');
+                    form.current.reset(); // Reset the form after successful submission
+                },
+                (error) => {
+                    submitError('Failed to send the message, please try again.');
+                    // console.error('EmailJS error:', error);
+                }
+            )
+            .catch((error) => {
+                submitError('An unexpected error occurred, please try again later.');
+                // console.error('Unexpected error:', error);
+            });
+    };
+
+
 
     return (
         <section id="contact" className={`contact section py-20 lg:px-20 dark:bg-gray-900 scroll-mt-[11vh]`}>
@@ -33,8 +61,8 @@ const Contact = () => {
                     <hr className=" flex justify-center items-center w-16 h-1 mb-8 bg-t bg-blue-500" />
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 px-4">
-                    <span>Let's Work Together</span><br/>
-                For work inquires feel free to get in touch with us
+                    <span>Let's Work Together</span><br />
+                    For work inquires feel free to get in touch with us
                 </p>
             </div>
 
@@ -56,30 +84,32 @@ const Contact = () => {
                 </div>
 
                 <form
-                    className="bg-white dark:bg-gray-800 shadow-[0_2px_10px_2px_rgba(0,0,0,0.1)] rounded-lg md:p-8 py-8 px-5"
+                    ref={form}
+                    onSubmit={sendEmail}
+                    className="bg-white dark:text-gray-200 dark:bg-gray-800 shadow-[0_2px_10px_2px_rgba(0,0,0,0.1)] rounded-lg md:p-8 py-8 px-5"
                     data-aos="fade-up"
-                    data-aos-delay="300"
+                    data-aos-delay="100"
                 >
                     <div className="flex flex-col md:grid md:grid-cols-2 gap-6">
-                            <input
-                                type="text"
-                                name="name"
-                                className="form-control w-full p-3 bg-slate-50 dark:bg-gray-700 border border-gray-300 rounded focus:border-blue-500"
-                                placeholder="Your Name"
-                                required
-                            />
-                            <input
-                                type="email"
-                                name="email"
-                                className="form-control w-full p-3 bg-slate-50 dark:bg-gray-700 border border-gray-300 rounded focus:border-blue-500"
-                                placeholder="Your Email"
-                                required
-                            />
+                        <input
+                            type="text"
+                            name="name"
+                            className="form-control w-full p-3 outline-none bg-slate-50 dark:bg-gray-700 border border-gray-300 rounded focus:border-blue-500"
+                            placeholder="Your Name"
+                            required
+                        />
+                        <input
+                            type="email"
+                            name="email"
+                            className="form-control w-full p-3 outline-none bg-slate-50 dark:bg-gray-700 border border-gray-300 rounded focus:border-blue-500"
+                            placeholder="Your Email"
+                            required
+                        />
                         <div className="col-span-2">
                             <input
                                 type="text"
                                 name="subject"
-                                className="form-control w-full p-3 bg-slate-50 dark:bg-gray-700 border border-gray-300 rounded focus:border-blue-500"
+                                className="form-control w-full p-3 outline-none bg-slate-50 dark:bg-gray-700 border border-gray-300 rounded focus:border-blue-500"
                                 placeholder="Subject"
                                 required
                             />
@@ -88,27 +118,25 @@ const Contact = () => {
                             <textarea
                                 name="message"
                                 rows="6"
-                                className="form-control w-full p-3 bg-slate-50 dark:bg-gray-700 border border-gray-300 rounded focus:border-blue-500"
+                                className="form-control w-full p-3 outline-none bg-slate-50 dark:bg-gray-700 border border-gray-300 rounded focus:border-blue-500"
                                 placeholder="Message"
                                 required
                             ></textarea>
                         </div>
                         <div className="col-span-2 text-center">
-                            {/* <div className="loading mb-4">Loading</div>
-                            <div className="error-message mb-4"></div>
-                            <div className="sent-message mb-4">
-                                Your message has been sent. Thank you!
-                            </div> */}
+                            {status === 'error' && <div className="error-message mb-4 text-red-500">{error}</div>}
+                            {status === 'success' && <div className="sent-message mb-4 text-green-500">Your message has been sent. Thank you!</div>}
                             <button
                                 type="submit"
-                                className="bg-blue-500 text-white py-2 px-6 rounded-full transition hover:bg-blue-600"
+                                className={`bg-blue-500 text-white py-2 px-6 rounded-full transition hover:bg-blue-600 ${status === 'submitting' ? 'cursor-not-allowed opacity-50' : ''}`}
+                                disabled={status === 'submitting'}
                             >
-                                Send Message
+                                { status === 'submitting' ? "Sending..." :"Send Message"}
                             </button>
                         </div>
                     </div>
                 </form>
-                {/* End Contact Form */}
+
             </div>
         </section>
     );

@@ -16,7 +16,7 @@ const About = () => {
                     <div className=" w-64 h-64 rounded-full mb-4">
                         <img src={jinesh} className="w-full h-full rounded-full" alt='profileImage' />
                     </div>
-                    <div className="flex flex-col gap-2 justify-start items-start text-slate-700 dark:text-slate-300">
+                    <div className="flex flex-col gap-2 justify-start items-start text-slate-700 dark:text-slate-300 whitespace-nowrap">
                         <p className="text-left"><strong>Name: </strong><span>Jinesh Prajapat</span></p>
                         <p className="text-left"><strong>Profile: </strong><span>Software Developer Engineer</span></p>
                         <p className="text-left"><strong>Email: </strong><span>prajapatjinesh585@gmail.com</span></p>
