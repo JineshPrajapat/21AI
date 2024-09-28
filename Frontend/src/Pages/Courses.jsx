@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { blog } from '../data/blog';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { getDate } from '../utils/getDate';
 import Heading from '../Component/Heading';
 import CommingSoon from '../Component/CommingSoon';

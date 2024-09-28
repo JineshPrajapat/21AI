@@ -9,33 +9,35 @@ import images from '../constants/images';
 const navLinks = [
     { _id: 0, label: 'Home', path: "#hero" },
     { _id: 1, label: 'About', path: "#about" },
-    { _id: 2, label: 'Services', path: '#services' },
-    { _id: 3, label: 'Blog', path: "/Blog" },
-    {
-        _id: 4, label: 'More',
-        subMenu: [
-            {
-                _id: 0, label: 'Research',
-                subMenu: [
-                    { _id: 0, label: 'Machine Learning', path: '/Researches/Machine Learning' },
-                    { _id: 1, label: 'Computer Vision', path: '/Researches/Computer Vision' },
-                    { _id: 2, label: 'Natural Language Processing', path: '/Researches/Natural Language Processing' },
-                    { _id: 3, label: 'AI Application', path: '/Researches/AI Application' },
-                ],
-            },
-            {
-                _id: 1, label: 'Courses',
-                subMenu: [
-                    { _id: 0, label: 'Machine Learning ', path: '/Courses/Machine Learning' },
-                    { _id: 1, label: 'Computer Vision ', path: '/Courses/Computer Vision' },
-                    { _id: 2, label: 'Deep Learning ', path: '/Courses/Deep Learning' },
-                    { _id: 3, label: 'Natural Language Processing', path: '/Courses/Natural Language Processing' },
-                    { _id: 4, label: 'Quantum Compunting', path: '/Courses/Quantum Computing' },
-                ],
-            },
-            { _id: 2, label: 'NewsLetter', path: "/NewsLetter" },
-        ],
-    },
+    { _id: 2, label: 'Skills', path: "#skills"},
+    // { _id: 2, label: 'Services', path: '#services' },
+    { _id: 3, label: 'Projects', path: '#projects'},
+    // { _id: 3, label: 'Blog', path: "/Blog" },
+    // {
+    //     _id: 4, label: 'More',
+    //     subMenu: [
+    //         {
+    //             _id: 0, label: 'Research',
+    //             subMenu: [
+    //                 { _id: 0, label: 'Machine Learning', path: '/Researches/Machine Learning' },
+    //                 { _id: 1, label: 'Computer Vision', path: '/Researches/Computer Vision' },
+    //                 { _id: 2, label: 'Natural Language Processing', path: '/Researches/Natural Language Processing' },
+    //                 { _id: 3, label: 'AI Application', path: '/Researches/AI Application' },
+    //             ],
+    //         },
+    //         {
+    //             _id: 1, label: 'Courses',
+    //             subMenu: [
+    //                 { _id: 0, label: 'Machine Learning ', path: '/Courses/Machine Learning' },
+    //                 { _id: 1, label: 'Computer Vision ', path: '/Courses/Computer Vision' },
+    //                 { _id: 2, label: 'Deep Learning ', path: '/Courses/Deep Learning' },
+    //                 { _id: 3, label: 'Natural Language Processing', path: '/Courses/Natural Language Processing' },
+    //                 { _id: 4, label: 'Quantum Compunting', path: '/Courses/Quantum Computing' },
+    //             ],
+    //         },
+    //         { _id: 2, label: 'NewsLetter', path: "/NewsLetter" },
+    //     ],
+    // },
     { _id: 5, label: 'Contact', path: '#contact' },
 ];
 
@@ -95,10 +97,10 @@ const Header = () => {
                 }
             });
 
-            console.log(activeSection);
+            // console.log(activeSection);
 
             setActiveSection(currentSection);
-            console.log("activeSection", activeSection);
+            // console.log("activeSection", activeSection);
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -120,12 +122,12 @@ const Header = () => {
 
 
     return (
-        <header className={`sticky top-0 flex items-center bg-black dark:bg-gray-950 shadow-sm lg:shadow-none dark:shadow-md dark:shadow-gray-800 shadow-white text-white p-4 transition-all duration-500 z-[997] ${isMobileMenuOpen ? 'shadow-md' : ''} `}>
+        <header className={`sticky top-0 flex items-center bg-black dark:bg-gray-950 shadow-sm lg:shadow-none dark:shadow-md dark:shadow-gray-800 shadow-white text-white px-3 p-2 transition-all duration-500 z-[997] ${isMobileMenuOpen ? 'shadow-md' : ''} `}>
             <div className="container lg:mx-20 flex items-center justify-between relative">
                 <div className='flex items-center justify-between w-full'>
-                    <Link to="/" className="flex items-center gap-1">
-                        <div className=" h-8 lg:h-14"><img src={images?.garud} alt='logo' className=' h-full w-full' /></div>
-                        <div className=" h-6 lg:h-10"><img src={images?.brandName} alt='logo' className=' h-full w-full' /></div>
+                    <Link to="/" className="flex items-center justify-center gap-2">
+                        <div className=" h-8 lg:h-12"><img src={images?.garud} alt='logo' className=' h-full w-full' /></div>
+                        <div className=" flex items-center text-xl lg:text-3xl">Jinesh Prajapat</div>
                     </Link>
                     <div className='lg:hidden'>
                         <DarkModeToggle />
@@ -144,7 +146,7 @@ const Header = () => {
                     <nav className={`lg:flex lg:items-center lg:relative lg:shadow-none flex gap-8  ${!isMobileMenuOpen ? "hidden" : ""}`}>
                         <ul className={`text-left list-none py-4 lg:flex lg:space-x-10 ${isMobileMenuOpen ? 'flex flex-col space-y-4 p-4 bg-white mx-6 my-10 h-[90vh] text-black rounded-md overflow-x-auto overflow-y-scroll' : 'lg:flex-row'}`} >
                             {navLinks.map((link, index) => {
-                                console.log("link.path chek", link?.path)
+                                // console.log("link.path chek", link?.path)
                                 return (
                                     <li
                                         key={index}

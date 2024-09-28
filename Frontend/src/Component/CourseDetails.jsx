@@ -1,5 +1,4 @@
 import React, { useState,useEffect } from 'react';
-import { blog } from '../data/blog';
 import { useParams, Link } from 'react-router-dom';
 import { getDecodeURL } from '../utils/getDecodeURL';
 import Heading from './Heading';
@@ -12,6 +11,7 @@ import { fetchData } from '../Services/apiConnector';
 const CourseDetails = () => {
     const dispatch = useDispatch();
     const { courseTitle, postTitle } = useParams();
+    const blog = useSelector((state) => state.blog.blogData);
     const data = blog.filter((data) => data.title === postTitle.replaceAll("-", " "));
     const courseDetail = useSelector(state => state.course.courseData);
 

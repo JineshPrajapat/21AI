@@ -1,7 +1,10 @@
-import React from 'react';
+import React , {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 const NotFound = () => {
+    useEffect(() => {
+        document.title = "Not Found";
+    },[])
     return (
         <div className="flex flex-col items-center justify-center h-[calc(100vh-68px)] text-center dark:text-gray-300">
             <h1 className="text-6xl font-bold mb-4">404</h1>

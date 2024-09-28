@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { blog } from "../data/blog";
 import BlogCard from "./BlogCard";
 import Heading from "./Heading";
 import { IoIosArrowForward } from "react-icons/io";

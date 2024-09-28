@@ -8,35 +8,37 @@ import logo2 from '../assets/images/logo_white.svg'
 const navLinks = [
     { _id: 0, label: 'Home', path: "#hero" },
     { _id: 1, label: 'About', path: "#about" },
-    { _id: 2, label: 'Services', path: '#services' },
-    { _id: 3, label: 'Blog', path: "/Blog" },
-    {
-        _id: 4, label: 'More',
-        Menu: [
-            {
-                _id: 0,
-                label: 'Research',
-                subMenu: [
-                    { _id: 0, label: 'Machine Learning', path: '/Researches/Machine Learning' },
-                    { _id: 1, label: 'Computer Vision', path: '/Researches/Computer Vision' },
-                    { _id: 2, label: 'Natural Language Processing', path: '/Researches/Natural Language Processing' },
-                    { _id: 3, label: 'AI Application', path: '/Researches/AI Application' },
-                ],
-            },
-            {
-                _id: 1,
-                label: 'Courses',
-                subMenu: [
-                    { _id: 0, label: 'Machine Learning ', path: '/Courses/Machine Learning' },
-                    { _id: 1, label: 'Computer Vision ', path: '/Courses/Computer Vision' },
-                    { _id: 2, label: 'Deep Learning ', path: '/Courses/Deep Learning' },
-                    { _id: 3, label: 'Natural Language Processing', path: '/Courses/Natural Language Processing' },
-                    { _id: 4, label: 'Quantum Computing', path: '/Courses/Quantum Computing' },
-                ],
-            },
-            { _id: 2, label: 'NewsLetter', path: "/NewsLetter" },
-        ],
-    },
+    { _id: 2, label: 'Skills', path: '#skills' },
+    { _id: 3, label: 'Projects', path: "#projects" },
+    // { _id: 2, label: 'Services', path: '#services' },
+    // { _id: 3, label: 'Blog', path: "/Blog" },
+    // {
+    //     _id: 4, label: 'More',
+    //     Menu: [
+    //         {
+    //             _id: 0,
+    //             label: 'Research',
+    //             subMenu: [
+    //                 { _id: 0, label: 'Machine Learning', path: '/Researches/Machine Learning' },
+    //                 { _id: 1, label: 'Computer Vision', path: '/Researches/Computer Vision' },
+    //                 { _id: 2, label: 'Natural Language Processing', path: '/Researches/Natural Language Processing' },
+    //                 { _id: 3, label: 'AI Application', path: '/Researches/AI Application' },
+    //             ],
+    //         },
+    //         {
+    //             _id: 1,
+    //             label: 'Courses',
+    //             subMenu: [
+    //                 { _id: 0, label: 'Machine Learning ', path: '/Courses/Machine Learning' },
+    //                 { _id: 1, label: 'Computer Vision ', path: '/Courses/Computer Vision' },
+    //                 { _id: 2, label: 'Deep Learning ', path: '/Courses/Deep Learning' },
+    //                 { _id: 3, label: 'Natural Language Processing', path: '/Courses/Natural Language Processing' },
+    //                 { _id: 4, label: 'Quantum Computing', path: '/Courses/Quantum Computing' },
+    //             ],
+    //         },
+    //         { _id: 2, label: 'NewsLetter', path: "/NewsLetter" },
+    //     ],
+    // },
     { _id: 5, label: 'Contact', path: '#contact' },
 ];
 

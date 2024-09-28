@@ -1,4 +1,5 @@
 // const BASE_URL = "http://localhost:4000/api/v1"
+
 export const BASE_URL = process.env.REACT_APP_BASE_URL
 export const SERVICE_ID = process.env.REACT_APP_EMAIL_SERVICE_ID
 export const SERVICE_TEMPLATE = process.env.REACT_APP_EMAIL_TEMPLATE

@@ -19,6 +19,10 @@ import CourseDetails from './Component/CourseDetails';
 import ResearchDetails from './Component/ResearchDetails';
 import NewsLetter from './Pages/NewsLetter';
 import NotFound from './Component/NotFound';
+import Project from './Pages/Home/Project';
+import ProjectDetails from './Pages/ProjectDetails';
+import Skills from './Pages/Home/Skills';
+import ResumeSection from './Pages/Home/ResumeSection';
 
 function App() {
 
@@ -30,20 +34,24 @@ function App() {
           <>
             <HeroSection />
             <About />
-            <Services />
-            <FAQ />
-            <Testimonials />
+            <ResumeSection/>
+            <Skills/>
+            {/* <Services /> */}
+            <Project/>
+            {/* <FAQ /> */}
+            {/* <Testimonials /> */}
             <Contact />
           </>
         } />
-        <Route path="/Blog" element={<Blog />} />
+        <Route path='/:repositoryName' element={<ProjectDetails/>}/>
+        {/* <Route path="/Blog" element={<Blog />} />
         <Route path="/Blog/:blogTitle" element={<BlogDetails />} />
         <Route path="/Blog/tag/:tagName" element={<BlogTags />} />
         <Route path='/Researches/*' element={<Research />} />
         <Route path='/Research/:researchTitle/:postTitle' element={<ResearchDetails />} />
         <Route path='/Courses/*' element={<Courses />} />
         <Route path='/Course/:courseTitle/:postTitle' element={<CourseDetails />} />
-        <Route path='/Newsletter' element={<NewsLetter />} />
+        <Route path='/Newsletter' element={<NewsLetter />} /> */}
 
         <Route path="*" element={<NotFound />} />
 

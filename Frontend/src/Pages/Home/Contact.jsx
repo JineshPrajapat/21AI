@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { IoLocationOutline, IoCallOutline } from "react-icons/io5";
 import { HiOutlineMail } from "react-icons/hi";
 import useFormStatus from '../../hooks/useFormStatus';
@@ -20,7 +20,7 @@ const contactInfo = [
     {
         icon: HiOutlineMail,
         title: 'Email Us',
-        description: 'team@garud21ai.com',
+        description: 'prajapatjinesh585@gmail.com',
     },
 ];
 
@@ -28,7 +28,7 @@ const Contact = () => {
 
     const form = useRef();
     const { status, error, startSubmitting, submitSuccess, submitError, resetFormStatus } = useFormStatus();
-
+    const [isLoading, setIsLoading] = useState(false);
     const sendEmail = (e) => {
         e.preventDefault();
         startSubmitting();
@@ -48,7 +48,7 @@ const Contact = () => {
             .catch((error) => {
                 submitError('An unexpected error occurred, please try again later.');
                 // console.error('Unexpected error:', error);
-            });
+            })
     };
 
 
@@ -62,14 +62,14 @@ const Contact = () => {
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 px-4">
                     <span>Let's Work Together</span><br />
-                    For work inquires feel free to get in touch with us
+                    Would love to hear your thoughts! I've crafted a contact form for you to share your feedback. Your insights are invaluable.
                 </p>
             </div>
 
             <div className="container mx-auto px-3" data-aos="fade-up" data-aos-delay="100">
-                <div className="bg-white dark:bg-gray-800 shadow-[0_2px_10px_2px_rgba(0,0,0,0.1)] rounded-lg p-8 mb-8" data-aos="fade-up" data-aos-delay="200">
+                <div className="bg-white dark:bg-gray-800 shadow-[0_2px_10px_2px_rgba(0,0,0,0.1)] rounded-lg p-4 lg:p-8 mb-8" data-aos="fade-up" data-aos-delay="200">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {contactInfo.map((info, index) => (
+                        {contactInfo?.map((info, index) => (
                             <div key={index} className="flex gap-4 items-center text-left dark:text-white">
                                 <div className='w-12 h-12 rounded-full border-[1px] border-blue-500 flex items-center justify-center'>
                                     <info.icon className={` text-blue-500 text-2xl `}></info.icon>

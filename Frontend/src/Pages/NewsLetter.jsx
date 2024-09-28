@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { blog } from '../data/blog';
 import { NavLink } from 'react-router-dom';
 import { getDate } from '../utils/getDate';
 import Heading from '../Component/Heading';
 import { fetchData } from '../Services/apiConnector';
 import { useSelector, useDispatch } from 'react-redux';
 import { BASE_URL } from '../Services/api';
-import { setNewsLetterData, setSingleNewsLetterData } from '../Reducer/Slice/newsLetterSlice';
+import { setNewsLetterData } from '../Reducer/Slice/newsLetterSlice';
 import CommingSoon from '../Component/CommingSoon';
 import PreLoader from '../Component/PreLoader';
 
